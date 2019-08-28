@@ -9,7 +9,7 @@ namespace HSS.Models
     public class Customer
     {
         public int Id_customer { get; set; }
-        [Required(ErrorMessage ="Enter the name of the customer")]
+        [Required(ErrorMessage = "Enter the name of the customer")]
         [StringLength(25)]
         public string Name { get; set; }
         [Required(ErrorMessage = "Enter the second name of the customer")]

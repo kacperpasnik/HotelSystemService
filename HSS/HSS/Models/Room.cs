@@ -10,9 +10,9 @@ namespace HSS.Models
     {
         public int Id_Room { get; set; }
         [Required(ErrorMessage = "Enter the Reservation day")]
-        List<int> ReservationDay { get; set; }
+        public List<int> ReservationDay { get; set; }
         [Required(ErrorMessage = "Enter the room number")]
-        public int RoomNumber { get; set; } 
+        public int RoomNumber { get; set; }
         public int Id_customer { get; set; }
 
     }
