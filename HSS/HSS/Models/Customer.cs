@@ -8,7 +8,7 @@ namespace HSS.Models
 {
     public class Customer
     {
-        public int Id_customer { get; set; }
+        public int CustomerId { get; set; }
         [Required(ErrorMessage = "Enter the name of the customer")]
         [StringLength(25)]
         public string Name { get; set; }

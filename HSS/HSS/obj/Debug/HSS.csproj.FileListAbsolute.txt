@@ -47,8 +47,6 @@ D:\Git\HotelSystemService\HSS\HSS\bin\roslyn\vbc.exe.config
 D:\Git\HotelSystemService\HSS\HSS\bin\roslyn\vbc.rsp
 D:\Git\HotelSystemService\HSS\HSS\bin\roslyn\VBCSCompiler.exe
 D:\Git\HotelSystemService\HSS\HSS\bin\roslyn\VBCSCompiler.exe.config
-D:\Git\HotelSystemService\HSS\HSS\bin\HSS.dll.CodeAnalysisLog.xml
-D:\Git\HotelSystemService\HSS\HSS\bin\HSS.dll.lastcodeanalysissucceeded
 D:\Git\HotelSystemService\HSS\HSS\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Git\HotelSystemService\HSS\HSS\bin\Microsoft.Web.Infrastructure.dll
 D:\Git\HotelSystemService\HSS\HSS\bin\System.Web.Helpers.dll
@@ -75,3 +73,7 @@ D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.csproj.CoreCompileInputs.cache
 D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.csproj.CopyComplete
 D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.dll
 D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.pdb
+D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.dll
+D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.SqlServer.dll
+D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.xml
+D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.SqlServer.xml
