@@ -77,3 +77,5 @@ D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.dll
 D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.SqlServer.dll
 D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.xml
 D:\Git\HotelSystemService\HSS\HSS\bin\EntityFramework.SqlServer.xml
+D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.Migrations.InitialCreate.resources
+D:\Git\HotelSystemService\HSS\HSS\obj\Debug\HSS.csproj.GenerateResource.cache
