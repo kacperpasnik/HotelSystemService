@@ -14,10 +14,22 @@ namespace HSS
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                 name: "AddReservation",
+                 url: "reservation-add",
+                 defaults: new { controller = "AddReservation", action = "Add" });
+
+            routes.MapRoute(
+                 name: "ManageReservation",
+                 url: "reservation-manage",
+                 defaults: new { controller = "Manage", action = "Manage" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+
+
         }
     }
 }

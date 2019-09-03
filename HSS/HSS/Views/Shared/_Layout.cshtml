@@ -7,7 +7,7 @@
 <body>
     <div id="container">
         <div id="logo">
-            <a href="Index.html" class="menulink">
+            <a id="indexHeaderLogo" href="@Url.Content("~/")" class="menulink">
                 Hotel System Service
             </a>
         </div>
@@ -15,30 +15,30 @@
 
         <div id="menu">
             <div class="option" style="border-top: 2px dashed #444444">
-                <a href="link" class="menulink">
+                <a href="@Url.Content("~/")" class="menulink">
+                    ● Home
+                </a>
+            </div>
+            <div class="option">
+                <a href="@Url.Action("Add","AddReservation")" class="menulink">
                     ● Add
                 </a>
             </div>
             <div class="option">
+                <a href="@Url.Action("Manage","Manage")" class="menulink">
+                    ● Manage
+                </a>
+            </div>
+            @*<div class="option">
                 <a href="link" class="menulink">
-                    ● Check
+                    ● test
                 </a>
             </div>
             <div class="option">
                 <a href="link" class="menulink">
-                    ● Show
+                    ● test
                 </a>
-            </div>
-            <div class="option">
-                <a href="link" class="menulink">
-                    ● Change
-                </a>
-            </div>
-            <div class="option">
-                <a href="link" class="menulink">
-                    ● Delete
-                </a>
-            </div>
+            </div>*@
 
         </div>
 
