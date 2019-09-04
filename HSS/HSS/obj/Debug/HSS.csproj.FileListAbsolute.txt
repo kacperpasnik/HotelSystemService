@@ -90,4 +90,3 @@ D:\Git\HotelSystemService\HSS\HSS\bin\Newtonsoft.Json.xml
 D:\Git\HotelSystemService\HSS\HSS\bin\System.Net.Http.Formatting.xml
 D:\Git\HotelSystemService\HSS\HSS\bin\System.Web.Http.xml
 D:\Git\HotelSystemService\HSS\HSS\bin\System.Web.Http.WebHost.xml
-D:\Git\HotelSystemService\HSS\HSS\bin\RouteDebugger.dll

@@ -1,8 +1,15 @@
-﻿
+﻿@model HSS.Models.Customer
+
 @{
     ViewBag.Title = "Add";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add</h2>
+<h2>Add a reservation</h2>
 
+@using (Html.BeginForm("Add", "AddReservation"))
+{
+    @Html.EditorFor(m => m)
+    <br />
+    <input type="submit" value="Dodaj" />
+}

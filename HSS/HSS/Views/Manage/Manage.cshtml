@@ -1,8 +1,58 @@
-﻿
+﻿@model HSS.ViewModels.ManageViewModel
 @{
     ViewBag.Title = "Manage";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Manage</h2>
+<h2>Manage reservations</h2> <br />
+<p>
+    @using (Html.BeginForm("Manage", "Manage", FormMethod.Get))
+    {
+    <b>Search by: </b>
+    @Html.DropDownList("Options", new List<SelectListItem>
+           {
+               new SelectListItem { Text= "Reservation ID",Value="1"},
+               new SelectListItem { Text= "First name",Value="2"},
+               new SelectListItem { Text= "Second name",Value="3"},
+               new SelectListItem { Text= "Start date",Value="4"},
+               new SelectListItem { Text= "End date",Value="5"},
+               new SelectListItem { Text= "Room number",Value="6"}
+            }, "Select option"
+                    ) <br> <br />
+    @Html.TextBox("Search") 
+    <input type="submit" value="Search" />
+    }
+</p>
 
+<table style="width:100%" border="1">
+    <tr>
+        <th>No. reservation</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Reservation start</th>
+        <th>Reservation end</th>
+        <th>No. room</th>
+    </tr>
+    @if (Model.Tuples.Count()==0)
+    {
+        <tr>
+            <td colspan="6">
+                No rows found by choosing such criteria
+            </td>
+        </tr>
+    }
+    else
+    { 
+        foreach (var x in Model.Tuples)
+        {
+        <tr>
+            <td>@x.CustomerId</td>
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.Date_from</td>
+            <td>@x.Date_to</td>
+            <td>@x.Room</td>
+        </tr>
+    }
+    }
+</table> 

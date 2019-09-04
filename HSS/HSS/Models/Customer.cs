@@ -8,6 +8,7 @@ namespace HSS.Models
 {
     public class Customer
     {
+        [ScaffoldColumn(false)]
         public int CustomerId { get; set; }
         [Required(ErrorMessage = "Enter the name of the customer")]
         [StringLength(25)]
