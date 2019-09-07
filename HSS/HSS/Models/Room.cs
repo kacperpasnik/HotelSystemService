@@ -8,6 +8,7 @@ namespace HSS.Models
 {
     public class Room
     {
+        [ScaffoldColumn(false)]
         public int RoomId { get; set; }
         [Required(ErrorMessage = "Enter the Reservation day")]
         public List<int> ReservationDay { get; set; }

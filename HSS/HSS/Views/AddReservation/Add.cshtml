@@ -5,11 +5,53 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Add a reservation</h2>
+<style>
+    .field-validation-error {
+        color: red;
+        font-size: 12px;
+        float: right;
+    }
 
-@using (Html.BeginForm("Add", "AddReservation"))
-{
-    @Html.EditorFor(m => m)
-    <br />
-    <input type="submit" value="Dodaj" />
-}
+    .input-validation-error 
+    {
+        background: pink;
+        border: 1px solid red;
+    }
+
+    #form 
+    {
+
+    }
+
+    #form_error 
+    {
+        color: red;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    #form_accept 
+    {
+        color: green;
+        font-size: 14px;
+        font-weight: bold;
+    }
+</style>
+
+<div id="form">
+    <h2>Add a reservation</h2> <br />
+    @if (ViewBag.Number==0)
+    {
+        <div id="form_error">@ViewBag.Message</div> <br />
+    }
+    else
+    {
+        <div id="form_accept">@ViewBag.Message</div> <br />
+    }
+    @using (Html.BeginForm("Add", "AddReservation"))
+    {
+        @Html.EditorFor(m => m)
+        <br />
+        <input type="submit" value="Dodaj" />
+    }
+</div>
