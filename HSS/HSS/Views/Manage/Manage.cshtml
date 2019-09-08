@@ -11,12 +11,11 @@
     <b>Search by: </b>
     @Html.DropDownList("Options", new List<SelectListItem>
            {
-               new SelectListItem { Text= "Reservation ID",Value="1"},
-               new SelectListItem { Text= "First name",Value="2"},
-               new SelectListItem { Text= "Second name",Value="3"},
-               new SelectListItem { Text= "Start date",Value="4"},
-               new SelectListItem { Text= "End date",Value="5"},
-               new SelectListItem { Text= "Room number",Value="6"}
+               new SelectListItem { Text= "First name",Value="1"},
+               new SelectListItem { Text= "Second name",Value="2"},
+               new SelectListItem { Text= "Start date",Value="3"},
+               new SelectListItem { Text= "End date",Value="4"},
+               new SelectListItem { Text= "Room number",Value="5"}
             }, "Select option"
                     ) <br> <br />
     @Html.TextBox("Search") 
@@ -26,12 +25,12 @@
 
 <table style="width:100%" border="1">
     <tr>
-        <th>No. reservation</th>
         <th>First name</th>
         <th>Last name</th>
         <th>Reservation start</th>
         <th>Reservation end</th>
         <th>No. room</th>
+        <th>Action</th>
     </tr>
     @if (Model.Tuples.Count()==0)
     {
@@ -46,12 +45,13 @@
         foreach (var x in Model.Tuples)
         {
         <tr>
-            <td>@x.CustomerId</td>
             <td>@x.Name</td>
             <td>@x.Surname</td>
-            <td>@x.Date_from</td>
-            <td>@x.Date_to</td>
+            <td>@x.Date_from.ToShortDateString()</td>
+            <td>@x.Date_to.ToShortDateString()</td>
             <td>@x.Room</td>
+            <td>@Html.ActionLink("Edit", "Edit", new { id = x.CustomerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = x.CustomerId })</td>
         </tr>
     }
     }

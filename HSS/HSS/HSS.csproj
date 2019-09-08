@@ -172,6 +172,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Manage\Manage.cshtml" />
     <Content Include="Views\AddReservation\Add.cshtml" />
+    <Content Include="Views\Manage\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
