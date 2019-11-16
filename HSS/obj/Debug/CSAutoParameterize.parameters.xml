@@ -1,7 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="HSSContext-Web.config Connection String" description="HSSContext Parametry połączenia używane w pliku web.config przez aplikację w celu uzyskiwania dostępu do bazy danych." defaultValue="Data source=(LocalDb)\MSSQLLocalDB Catalog=HSSBase;Integrated Security=SSPI;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Debug\\Package\\PackageTmp\\Views\\web\.config$" match="/configuration/connectionStrings/add[@name='HSSContext']/@connectionString" />
-    <parameterEntry kind="XmlFile" scope="D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HSSContext']/@connectionString" />
-  </parameter>
-</parameters>
