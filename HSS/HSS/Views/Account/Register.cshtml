@@ -1,0 +1,83 @@
+﻿
+@model HSS.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2> <br />
+
+@*@if (ViewBag.Number == 0)
+    {
+        <div id="form_error">@ViewBag.Message</div> <br />
+    }
+    else
+    {
+        <div id="form_accept">@ViewBag.Message</div> <br />
+    }*@
+
+
+    <div id="form">
+        @using (Html.BeginForm("Register", "Account"))
+        {
+            @Html.AntiForgeryToken()
+            <div id="form_error">
+                @Html.ValidationMessage("loginerror", "")
+                @Html.ValidationSummary()
+            </div>
+
+            <table id="login-table" style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td>@Html.LabelFor(m => m.Login, "Login:")</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Login)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.Login)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Password, "Password:")</td>
+                    <td>
+                        @Html.PasswordFor(m => m.Password)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 20px 0px 0px; text-align: left;">
+                        @Html.LabelFor(m => m.ConfrimPassword, "Confirm Password:")
+                    </td>
+                    <td style="padding: 0px; text-align: left;">
+                        @Html.PasswordFor(m => m.ConfrimPassword)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.ConfrimPassword)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="padding: 0px 20px 0px 0px;">
+                        @Html.LabelFor(m => m.HotelName, "Hotel name:")
+                    </td>
+                    <td style="padding: 0px; text-align: left;">
+                        @Html.TextBoxFor(m => m.HotelName)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.HotelName)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align: right; padding-right: 20px;">
+                        <input type="submit" value="Register" class="submitLink" style="height: 40px; text-align: right; margin: 0px; padding: 0px;" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+

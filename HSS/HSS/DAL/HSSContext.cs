@@ -1,4 +1,5 @@
 ﻿using HSS.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,14 +8,19 @@ using System.Threading.Tasks;
 
 namespace HSS.DAL
 {
-    public class HSSContext : DbContext
+    public class HSSContext : IdentityDbContext<ApplicationUser>
     {
         public HSSContext() : base("HSSContext")
         {
 
         }
-        public DbSet<Customer> Customer { get; set; }
-        public DbSet<Room> Room { get; set; }
 
+        public static HSSContext Create()
+        {
+            return new HSSContext();
+        }
+        public DbSet<Customer> Customer { get; set; }
+
+        public System.Data.Entity.DbSet<HSS.Models.Account> Accounts { get; set; }
     }
 }

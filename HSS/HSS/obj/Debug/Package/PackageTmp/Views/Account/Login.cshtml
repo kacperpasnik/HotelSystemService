@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNet.Identity
+
+@model HSS.ViewModels.LoginViewModel
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Login</h2> <br />
+
+
+    <div id="form">
+        @using (Html.BeginForm("Login", "Account"))
+        {
+            @Html.AntiForgeryToken()
+            <div id="form_error">
+                @Html.ValidationMessage("loginerror", "")
+                @Html.ValidationSummary()
+            </div>
+
+            <table id="login-table" style="margin-left: auto; margin-right: auto;">
+                <tr>
+                    <td>@Html.LabelFor(m => m.Login, "Login:")</td>
+                    <td>
+                        @Html.TextBoxFor(m => m.Login)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.Login)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.Password, "Password:")</td>
+                    <td>
+                        @Html.PasswordFor(m => m.Password)
+                        <div class="login-validation-message">
+                            @Html.ValidationMessageFor(m => m.Password)
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        @Html.CheckBoxFor(m => m.RememberAcc)
+                        @Html.LabelFor(m => m.RememberAcc)
+
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td colspan="2" style="text-align: right; padding-right: 20px;">
+                        <input type="submit" value="Log in" class="submitLink" />
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
+
+

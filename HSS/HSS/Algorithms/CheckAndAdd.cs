@@ -9,12 +9,14 @@ namespace HSS.Algorithms
     public abstract class CheckAndAdd
     {
         private static HSSContext db = new HSSContext();
+        //list of all reserved startdates and enddates in database
         private static List<DateTime> ListOfAllDates = new List<DateTime>();
+        //every single day that occurs in the very specific one reservation
         private static List<DateTime> DatesInOneReservation = new List<DateTime>();
 
-        public static bool CheckDays(DateTime StartDate, DateTime EndDate, int room)
+        public static bool CheckDays(DateTime StartDate, DateTime EndDate, int room, string hotelName)
         {
-            DownloadData(room);
+            DownloadData(room,hotelName);
             TimeSpan differrent = EndDate.Subtract(StartDate);
             DateTime copy;
             int days = (int)differrent.TotalDays;
@@ -22,7 +24,7 @@ namespace HSS.Algorithms
             {
                 AttachToListOfOneReservation(i);
                 copy = StartDate;
-                for (int j = 0; j < days; j++)
+                for (int j = 0; j <= days; j++)
                 {
                     copy.AddDays(j);
                     foreach (var x in DatesInOneReservation)
@@ -41,14 +43,16 @@ namespace HSS.Algorithms
             return true;
         }
 
-        private static void DownloadData(int room)
+        private static void DownloadData(int room, string hotelName)
         {
-            foreach(var x in db.Customer.Where(x => x.Room==room))
+            
+            foreach (var x in db.Customer.Where(x => x.Room==room && x.HotelName==hotelName))
             {
                 ListOfAllDates.Add(x.Date_from);
                 ListOfAllDates.Add(x.Date_to);
             }
         }
+
 
         private static void AttachToListOfOneReservation(int ReservationNumber)
         {

@@ -1,0 +1,2 @@
+D:\Git\HotelSystemService\HSS\HSS.Tests\obj\Debug\HSS.Tests.csprojAssemblyReference.cache
+D:\Git\HotelSystemService\HSS\HSS.Tests\obj\Debug\HSS.Tests.csproj.CoreCompileInputs.cache

@@ -1,6 +1,7 @@
 ﻿using HSS.Algorithms;
 using HSS.DAL;
 using HSS.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,24 +10,21 @@ using System.Web.Mvc;
 
 namespace HSS.Controllers
 {
-    [RoutePrefix("reservation2")]
+    [Authorize]
     public class AddReservationController : Controller
     {
-        // GET: AddRoom
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+        private HSSContext db = new HSSContext();
         [Route]
+        
         public ActionResult Add()
         {
-            //ViewBag.Message = "test";
             return View();
         }
 
         [HttpPost]
         public ActionResult Add(Customer customer)
         {
+            customer.HotelName = HotelName.GetHotelName(User.Identity.GetUserName());
             ViewBag.Number = 0;
             if (customer.Date_from.CompareTo(customer.Date_to) == 1)
             {
@@ -35,7 +33,7 @@ namespace HSS.Controllers
             }
             else
             {
-                if (!CheckAndAdd.CheckDays(customer.Date_from, customer.Date_to, customer.Room))
+                if (!CheckAndAdd.CheckDays(customer.Date_from, customer.Date_to, customer.Room,customer.HotelName))
                 {
                     ViewBag.Message = "The chosen date is already resereved for this room.";
                     return View("Add", customer);
@@ -45,8 +43,7 @@ namespace HSS.Controllers
                     if (!ModelState.IsValid)
                         return View("Add", customer);
                     else
-                    {
-                        HSSContext db = new HSSContext();
+                    {                 
                         db.Customer.Add(customer);
                         db.SaveChanges();
                         ViewBag.Message = "Reservation has been added successfully!";
@@ -56,5 +53,7 @@ namespace HSS.Controllers
                 }
             }
         }
+
+
     }
 }

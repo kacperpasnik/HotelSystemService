@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="HotelSystemService" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="HSSContext-Web.config Connection String" description="" value="Provider=SQLNCLI11;Data Source=KACPER-KOMPUTER;Integrated Security=SSPI;Initial Catalog=master" tags="">
+    <parameterEntry kind="XmlFile" scope="D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Release\\Package\\PackageTmp\\Views\\web\.config$" match="/configuration/connectionStrings/add[@name='HSSContext']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\Git\\HotelSystemService\\HSS\\HSS\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='HSSContext']/@connectionString" />
+  </parameter>
+</parameters>

@@ -15,13 +15,23 @@ namespace HSS
 
             routes.MapRoute(
                  name: "AddReservation",
-                 url: "reservation-add",
+                 url: "add-reservation",
                  defaults: new { controller = "AddReservation", action = "Add" });
 
             routes.MapRoute(
                  name: "ManageReservation",
-                 url: "reservation-manage",
+                 url: "manage-reservation",
                  defaults: new { controller = "Manage", action = "Manage" });
+
+            routes.MapRoute(
+                 name: "Register",
+                 url: "register",
+                 defaults: new { controller = "Account", action = "Register" });
+
+            routes.MapRoute(
+                 name: "Login",
+                 url: "login",
+                 defaults: new { controller = "Account", action = "Login" });
 
             routes.MapRoute(
                 name: "Default",
